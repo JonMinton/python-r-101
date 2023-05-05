@@ -5,3 +5,14 @@ from rpy2 import robjects
 
 pi = robjects.r['pi']
 print(pi)
+print(type(pi))
+
+robjects.r('''
+    add_nums <- function(x, y) {
+        return(x + y)
+    }
+
+    print(add_nums(x = 5, y = 10))
+    print(add_nums(x = 10, y = 20))
+
+''')
